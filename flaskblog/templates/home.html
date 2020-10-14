@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+    {% block content %}
+    <div class="top-view">
+      <div class="hero">
+        <css-doodle>
+    
+          :doodle {
+            @grid: 18 / 100vmax;
+            background: black;
+            font-family: sans-serif;
+          }
+          :after {
+            content: "";
+            color: hsla(@r360, 70%, 70%, @r.9);
+            font-size: 4vmax;
+            opacity:90%
+          }
+          background: rgba(96, 86, 158, @rand(.9));
+          transition: .2s ease @rand(200ms);
+          transform: rotate(@rand(360deg));
+          clip-path: polygon(
+            @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
+);
+          
+        </css-doodle>
+        <div class="text">
+          <h1>We are <span class="typed-text"></span><span class="cursor">&nbsp</span></h1>
+        </div>
+        <div class="main-down-arrow" id="down-arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.55 44.393">
+          <g id="Group_2" data-name="Group 2" transform="translate(-966 -967.48)">
+              <path id="Path_2" data-name="Path 2" d="M966.813,997.8l13.973,13.577L994.363,997.8" transform="translate(-0.313)" fill="none" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+          </g>
+          </svg>
+      </div>
+      </div>
+    </div>
+    <div class="back aboutus main" id="arrow" >
+      <div  class="container " style="color:rgb(255, 255, 255); padding-top: 4em ;
+      padding-bottom: 4em;" >
+        <div data-aos="zoom-in" data-aos-duration="1000"  >
+          <h1 style="font-weight: 600;font-size: 3em;margin-bottom: 2px;">ABOUT US</h1>
+          <p class="dash" style="width: 12em;"></p>
+          <p style="margin-top: 30px;font-weight: 600px;font-size: large;margin-bottom: 20px;">Established in 2019, we are C.U.B.E, VIT's first and the only cubing club. Our aim is to support fellow speecubers by providing them a paltform to showcase their underrated skills in the feild of speedcubing.
+          A club with over 50 members including speedcubers, designers and managers, we work on organising events that benefits our college and its students!</p>
+          
+      </div>
+    </div>
+    </div>
+    <div class="video " style="text-align: center;padding-top: 4em ;
+    padding-bottom: 3em;">
+      <div data-aos="zoom-out" data-aos-duration="1500" >
+        <h2 style="font-weight: 600;font-size: 3em;">KNOW WHAT WE ARE</h2>
+        <p class="dash"></p>
+        
+          <video class="center" width="500" controls>
+            <source src="{{url_for('static',filename='cubevideo.mp4')}}" type="video/mp4">
+          </video>
+      </div>
+    </div>
+    <div class="container" style="text-align: center;">
+      <div data-aos="zoom-in" data-aos-duration="1000">
+        <h1 style="font-weight: 600;font-size: 3em;" >DOMAINS</h1>
+        <p class="dash" style="width: 15em;"></p>
+      </div>
+   
+      <div class="flex">
+        <div class="domain" data-aos="fade-down-right" style="padding-top: 2.5em;" data-aos-duration="1000">
+          <div class="hover">
+            <img src="{{url_for('static',filename='cube.png')}}">
+            <h1>SPEEDCUBER</h1>
+            <p class="dash1"></p>
+            <p class="para">With one of the quickest fingers in VIT, we have our speedcubers who are specialised in solving various puzzles of different dimensions and shapes. Dont blink your eyes else you couldnt see them solve!</p>
+          </div>
+        </div>
+        <div class="domain" data-aos="fade-down-left" data-aos-duration="1000">
+          <div class="hover">
+            <i class="child icon"></i>
+            <h1>ENTHUSIASTS</h1>
+            <p class="dash1"></p>
+            <p class="para">You think you are slow at solving the cube? Want to improve? The enthusiasts domain is for you where peeps would be taught new techniques and algorithm to get FASTER!</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex">
+        <div class="domain" data-aos="fade-up-right" data-aos-duration="800">
+          <div class="hover">
+            <i class="desktop icon"></i>
+            <h1>DESIGN</h1>
+            <p class="dash1" style="width: 8em;"></p>
+            <p class="para">From making websites to making small logos, we have desginers who can work on any defined scales! One of the finest designing teams who would not fail to impress you!</p>
+      
+          </div>  
+        </div>
+        <div class="domain" data-aos="fade-up-left" data-aos-duration="800">
+          <div class="hover">
+            <i class="users icon"></i>
+            <h1>MANAGEMENT</h1>
+            <p class="dash1" style="width: 16em;"></p>
+            <p class="para">Handling and organising so many events and meetings can really be tidious, but not here! All thanks to the designing team!
+              Their ability to make hectic task into an enjoyable work is way beyond imagination </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock content %}

@@ -1,0 +1,152 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="top-view">
+    <div class="hero">
+      <css-doodle>
+  
+        :doodle {
+          @grid: 18 / 100vmax;
+          background: black;
+          font-family: sans-serif;
+        }
+        :after {
+          content: "";
+          color: hsla(@r360, 70%, 70%, @r.9);
+          font-size: 4vmax;
+          opacity:90%
+        }
+        background: rgba(96, 86, 158, @rand(.9));
+        transition: .2s ease @rand(200ms);
+        transform: rotate(@rand(360deg));
+        clip-path: polygon(
+          @rand(100%) 0, 100% @rand(100%), 0 @rand(100%)
+);
+        
+      </css-doodle>
+      <div class="text">
+        <h1>The Team</h1>
+        <p style="font-weight: 600;font-size: 2em;color: orange;">Presenting to you- The BOARD of 2020-21</p>
+      </div>
+      <div class="main-down-arrow" id="down-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28.55 44.393">
+        <g id="Group_2" data-name="Group 2" transform="translate(-966 -967.48)">
+            <path id="Path_2" data-name="Path 2" d="M966.813,997.8l13.973,13.577L994.363,997.8" transform="translate(-0.313)" fill="none" stroke="#ccc" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        </svg>
+    </div>
+    </div>
+  </div>
+  <div class="container main" id="arrow">
+      <div class="board"  >
+          <div>
+            <h1 style="font-weight: 600;font-size: 3em;margin-bottom: 2px;">THE BOARD</h1>
+            <p class="dash"></p>
+          </div>
+        
+        <div class="board_peep">
+            <div class="row">
+                <div class="ok col-lg-4 justify-content-center " data-aos="fade-right" data-aos-duration="1000"> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Samarth Nehe</h2>
+                        <p>CHAIR</p>
+                
+                    </div>
+                </div>
+                <div class="ok col-lg-4 justify-content-center "> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>V.J Karthik</h2>
+                        <p>VICE-CHAIR</p>
+                
+                    </div>
+                </div>
+                <div class="ok col-lg-4 justify-content-center " data-aos="fade-left" data-aos-duration="1000"> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Pranavi Pendyala</h2>
+                        <p>GENERAL SECRETARY</p>
+                
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="ok col-lg-4 justify-content-center " data-aos="fade-right" data-aos-duration="1000"> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Kartik Chadha</h2>
+                        <p>EVENT HEAD - INTERNAL</p>
+                
+                    </div>
+                </div>
+                <div class="ok col-lg-4 justify-content-center "> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Ishitva Verma</h2>
+                        <p>EVENT HEAD - EXTERNAL</p>
+                
+                    </div>
+                </div>
+                <div class="ok col-lg-4 justify-content-center " data-aos="fade-left" data-aos-duration="1000"> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Ankit Jain</h2>
+                        <p>FINANCE HEAD</p>
+                
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="ok col-lg-4 justify-content-center " data-aos="fade-right" data-aos-duration="1000"> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Bhawana Choudhary</h2>
+                        <p>MARKETING HEAD</p>
+                
+                    </div>
+                </div>
+                <div class="ok col-lg-4 justify-content-center "> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Turusha Ghimire</h2>
+                        <p>PUBLIC RELATION HEAD</p>
+                
+                    </div>
+                </div>
+                <div class="ok col-lg-4 justify-content-center " data-aos="fade-left" data-aos-duration="1000"> 
+                    <div class="member">
+
+                    </div>
+                    <div>
+                        <h2>Uddhav Bhardwaj</h2>
+                        <p>DESIGN HEAD</p>
+                
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        
+
+      </div>
+
+  </div>
+{% endblock content %}
