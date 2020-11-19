@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!--Css Doodle-->
+    <script src="https://unpkg.com/css-doodle@0.8.5/css-doodle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+    {{fontawesome_html()}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendors/formvalidation/dist/css/formValidation.min.css">
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <link rel="icon" href="../static/cubetitle.png" type="image/png">
+
+    {% if title %}
+        <title>C.U.B.E VIT - {{ title }}</title>
+    {% else %}
+        <title>C.U.B.E VIT</title>
+    {% endif %}
+</head>
+<body>
+  <div id="preloader">
+    <div class="rubiks-loader">
+      <div class="cube">
+        <!-- base position -->
+        <div class="face front piece row-top    col-left   yellow"></div>
+        <div class="face front piece row-top    col-center green "></div>
+        <div class="face front piece row-top    col-right  white "></div>
+        <div class="face front piece row-center col-left   blue  "></div>
+        <div class="face front piece row-center col-center green "></div>
+        <div class="face front piece row-center col-right  blue  "></div>
+        <div class="face front piece row-bottom col-left   green "></div>
+        <div class="face front piece row-bottom col-center yellow"></div>
+        <div class="face front piece row-bottom col-right  red   "></div>
+    
+        <!-- first step: E', equator inverted -->
+        <div class="face down  piece row-top    col-center green "></div>
+        <div class="face down  piece row-center col-center red   "></div>
+        <div class="face down  piece row-bottom col-center white "></div>
+    
+        <!-- second step: M, middle -->
+        <div class="face right piece row-center col-left   yellow"></div>
+        <div class="face right piece row-center col-center green "></div>
+        <div class="face right piece row-center col-right  blue  "></div>
+    
+        <!-- third step: L, left -->
+        <div class="face up    piece row-top    col-left   yellow"></div>
+        <div class="face up    piece row-center col-left   blue  "></div>
+        <div class="face up    piece row-bottom col-left   green "></div>
+    
+        <!-- fourth step: D, down -->
+        <div class="face left  piece row-bottom col-left   green "></div>
+        <div class="face left  piece row-bottom col-center yellow"></div>
+        <div class="face left  piece row-bottom col-right  red   "></div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top lappy" >
+    <div class="container-fluid">
+      <a class="navbar-brand mr-8" href="/" style="padding-top: 0px;padding-bottom: 0px;"><img src="{{url_for('static',filename='cubelogo.png')}}" width="80px" height="35px"></a>
+      <button  class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+         
+        </div>
+       
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="{{ url_for('home') }}">Home</a>
+          <a class="nav-item nav-link" href="{{ url_for('about') }}">About Us</a>
+          <a class="nav-item nav-link" href="{{ url_for('team') }}">Team</a>
+          <a class="nav-item nav-link" href="{{ url_for('event') }}">Events</a>
+          <a class="nav-item nav-link" href="{{ url_for('contform') }}">Contact Us</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </nav>
+  
+  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top phone">
+    <div class="container">
+      
+        <a class="navbar-brand mr-8" href="/" style="padding-top: 0px;padding-bottom: 0px;"><img src="{{url_for('static',filename='cubelogo.png')}}" width="80px" height="35px"></a>
+      <button id="burger" class="open-main-nav" onclick="showNav()">
+        <span class="burger"></span>
+        
+      </button>
+      
+      
+      <nav class="main-nav " id="main-nav">
+        <ul>
+          <li>
+            <a href="{{ url_for('home') }}">Home</a>
+          </li>
+          <li>
+            <a href="{{ url_for('about') }}">About</a>
+          </li>
+          <li>
+            <a href="{{ url_for('team') }}">Team</a>
+          </li>
+          <li>
+            <a href="{{ url_for('event') }}">Events</a>
+          </li>
+          <li>
+            <a href="{{ url_for('contform') }}">Contact</a>
+          </li>
+        </ul>
+      </div>
+     
+    </nav>
+    
+    <div class="container form"  >
+       <h1>MESSAGE US</h1>
+       <p class="dash"></p>
+       <div class="container form1" style="margin:3em auto">
+        <form action="https://formspree.io/f/xleonzpa" method="POST" style="color: white;text-align: left;">
+            <div class="form-group mb-2" >
+              <label for="exampleInputEmail1">Name</label>
+              <input name="username" type="text" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter Name">
+              
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Email</label>
+              <input name="email" type="email" class="form-control " id="exampleInputPassword1" required placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Phone</label>
+                <input name="phone" type="tel" class="form-control" id="exampleInputPassword1" placeholder="Phone" pattern="^[0-9]{10}$" title="Phone number must be of 10 digits">
+              </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Message</label>
+                <textarea name="message" class="form-control" rows="7" id="exampleInputPassword1" required placeholder="Message"></textarea>
+              </div>
+            <div style="display: flex;justify-content: center;">
+                <button type="submit" class="btn " style="background-color: rgb(96, 86, 158);color:white">Submit</button>
+            </div>
+            
+          </form>
+       </div>
+
+    </div>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <script>
+        AOS.init();
+      </script>
+      <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+     
+      <script src="{{ url_for('static', filename='main.js') }}"></script>
+      <script src="{{ url_for('static', filename='main1.js') }}"></script>
+      <script>
+     
+        function showNav(){
+          
+          document.getElementById('burger').classList.toggle('is-open');
+          document.getElementById('main-nav').classList.toggle('is-open');
+      }
+        
+       
+    </script>
+    </script>
+    <script>
+      $(function () {
+      setTimeout(function () {
+        $('#preloader').fadeOut('slow', function () {
+          $(this).remove();
+        });
+      }, 2000);
+    });
+    </script>
+    
+      </body>
+  </html>
+    
+  
